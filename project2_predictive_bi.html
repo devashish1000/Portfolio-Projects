@@ -1,72 +1,105 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Predictive Analytics & BI System — Dev Neupane</title>
-<meta name="description" content="Predictive Analytics & BI System — Dev Neupane — Analytics portfolio by Dev Neupane"/>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Predictive Analytics & BI System — Dev Neupane</title>
+  <meta name="description" content="Built unified forecasting and BI system — improved accuracy 25% and enabled $2M strategic decisions.">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0b0e14;color:#e6eaf2}
+    a{color:#00d97e;text-decoration:none}a:hover{text-decoration:underline}
+    .nav{background:#121826;border-bottom:1px solid #1f2740;display:flex;justify-content:center;gap:28px;padding:12px 0;position:sticky;top:0;z-index:10}
+    .nav a{font-weight:600;color:#9aa4b2}.nav a:hover{color:#00d97e}
+    .container{max-width:1080px;margin:0 auto;padding:28px}
+    .hero{text-align:center;margin-bottom:32px}
+    .hero h1{font-size:34px;margin:8px 0;background:linear-gradient(135deg,#7c5cff,#00d97e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .pill{background:#161d31;border:1px solid #283356;color:#dfe3eb;border-radius:999px;padding:8px 12px;font-size:12px;display:inline-block;margin-bottom:8px}
+    .kpi{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+    .metric{background:#1a2138;padding:12px 18px;border-radius:10px;min-width:150px;text-align:center}
+    .metric span{font-size:28px;font-weight:800;display:block}
+    .card{background:#121826;border:1px solid #1f2740;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,.35);margin-top:16px}
+    canvas{max-width:100%;border-radius:10px;background:#0b0e14;margin-top:10px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .footer{text-align:center;font-size:12px;color:#9aa4b2;margin-top:30px}
+  </style>
+</head>
+<body>
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="project1_financial_automation.html">Financial Automation</a>
+  <a href="project2_predictive_bi.html" style="color:#00d97e">Predictive BI System</a>
+  <a href="project3_etl_pipeline.html">ETL & Self-Service Analytics</a>
+</div>
 
-<style>
-  :root{--bg:#0b0e14;--card:#121826;--muted:#9aa4b2;--text:#e6eaf2;--accent:#7c5cff;--green:#00d97e;--red:#ff4d4f;}
-  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
-  .container{max-width:1080px;margin:0 auto;padding:28px}
-  .grid{display:grid;gap:18px}
-  .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:var(--card);border:1px solid #1f2740;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,.35)}
-  h1{font-size:32px;margin:4px 0 8px} h2{font-size:22px;margin:0 0 8px} h3{font-size:16px;margin:0 0 6px;color:var(--muted);font-weight:600}
-  p{line-height:1.6;color:#dfe3eb} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-  .pill{display:inline-flex;align-items:center;gap:8px;background:#161d31;border:1px solid #283356;color:#dfe3eb;border-radius:999px;padding:8px 12px;font-size:12px}
-  .kpi{display:flex;align-items:baseline;gap:8px} .kpi .value{font-size:28px;font-weight:800} .kpi .delta.up{color:var(--green)} .kpi .delta.down{color:var(--red)}
-  .row{display:flex;flex-wrap:wrap;gap:14px}
-  .btn{display:inline-block;background:linear-gradient(135deg,#7c5cff,#4a32ff);color:white;border:none;border-radius:12px;padding:10px 14px;font-weight:700}
-  .badge{background:#1a2138;border:1px solid #2b3869;border-radius:8px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center}
-  .hero{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-  .code, code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;color:#d1e9ff}
-  .footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
-  iframe{width:100%;height:420px;border:none;border-radius:12px;background:#0b0e14}
-  .list{margin:0;padding-left:18px}
-</style>
-
-</head><body><div class="container">
-<div class="hero">
-  <span class="pill">Project · Forecasting · BI</span>
-  <h1>Predictive Analytics & BI System</h1>
-  <p>Unified forecasting engine + executive BI that improved accuracy by 22% and reduced reporting time from 3 days to 30 minutes.</p>
-  <div class="row">
-    <a class="badge" href="https://github.com/yourusername/predictive-bi-system" target="_blank">💻 View Code on GitHub</a>
-    <a class="badge" href="https://public.tableau.com/" target="_blank">📊 Live Dashboard (Tableau)</a>
-    <a class="badge" href="https://drive.google.com/" target="_blank">📄 Model Cards & Docs</a>
+<div class="container" data-aos="fade-up">
+  <div class="hero">
+    <span class="pill">Project · Python · dbt · Snowflake</span>
+    <h1>Predictive Analytics & BI System</h1>
+    <p>Developed a unified forecasting and BI ecosystem leveraging Python, dbt, and Snowflake — increasing predictive accuracy by 25 % and influencing $2 M in strategic allocation decisions.</p>
   </div>
+
+  <div class="kpi">
+    <div class="metric"><span id="p1">0</span>% Accuracy Gain</div>
+    <div class="metric"><span id="p2">0</span>M USD Value Impact</div>
+    <div class="metric"><span id="p3">0</span> Units Forecasted</div>
+  </div>
+
+  <div class="badges">
+    <img src="https://img.shields.io/badge/Python-3.10-yellow?style=for-the-badge">
+    <img src="https://img.shields.io/badge/dbt-Analytics-orange?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Snowflake-Data%20Warehouse-blue?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Tableau-BI-green?style=for-the-badge">
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Forecast Accuracy Simulation</h2>
+    <p>Interactive visualization comparing baseline forecast vs. improved ML model performance over six time periods.</p>
+    <canvas id="forecastChart"></canvas>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Key Deliverables</h2>
+    <ul>
+      <li>Implemented multivariate regression & random-forest models predicting weekly demand with 25 % error reduction.</li>
+      <li>Built dbt models automating 50+ transformation layers across sales, inventory, and marketing datasets.</li>
+      <li>Designed Tableau dashboards visualizing KPIs for 15 BUs, reducing manual reporting cycle by 90 %.</li>
+    </ul>
+  </div>
+
+  <div class="card" data-aos="fade-up">
+    <h2>Related Projects</h2>
+    <p><a href="project1_financial_automation.html">PROJECT 1:</a> Financial Operations Automation Platform — 20 hrs/week saved, 2-day faster close.</p>
+    <p><a href="project3_etl_pipeline.html">PROJECT 3:</a> Cross-Functional ETL Pipeline & Self-Service Analytics — 70 % fewer ad-hoc requests.</p>
+  </div>
+
+  <div class="footer">© Dev Neupane — Analytics Portfolio</div>
 </div>
 
-<div class="grid grid-3">
-  
-    <div class="card">
-      <h3>Forecast Accuracy</h3>
-      <div class="kpi"><div class="value">+22%</div><div class="delta up">▲ vs baseline</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Exec Reporting Time</h3>
-      <div class="kpi"><div class="value">30 min</div><div class="delta up">▲ from 3 days</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Retention Opportunity</h3>
-      <div class="kpi"><div class="value">$1.2M</div><div class="delta up">▲ modeled</div></div>
-    </div>
-</div>
+<script>
+AOS.init({duration:800});
+new CountUp('p1',0,25,0,2.5).start();
+new CountUp('p2',0,2,0,2.5).start();
+new CountUp('p3',0,1500,0,2.5).start();
 
-<div class="card">
-  <h2>Highlights</h2>
-  <ul class="list">
-    <li>End‑to‑end pipeline: ingestion → cleansing → feature store → model → BI refresh.</li>
-    <li>Models: multivariate regression (demand), random forest (churn), Prophet for seasonality.</li>
-    <li>Governance: drift monitoring, backtests, and automated KPI write‑back to finance tables.</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>Interactive BI (replace with your Tableau public URL)</h2>
-  <p class="code">Embed URL → https://public.tableau.com/views/predictive-bisystem/Dashboard1</p>
-  <iframe src=""></iframe>
-</div>
-
-<div class="footer">Last built 2025-10-21 06:17 • © Dev Neupane</div></div></body></html>
+const ctx=document.getElementById('forecastChart').getContext('2d');
+new Chart(ctx,{
+  type:'line',
+  data:{
+    labels:['Q1','Q2','Q3','Q4','Q5','Q6'],
+    datasets:[
+      {label:'Baseline Forecast Error (%)',data:[18,19,17,16,15,14],borderColor:'#ff6f61',tension:.3,fill:false},
+      {label:'ML Model Error (%)',data:[15,14,13,12,11,9],borderColor:'#00d97e',tension:.3,fill:false}
+    ]
+  },
+  options:{
+    plugins:{legend:{labels:{color:'#e6eaf2'}}},
+    scales:{x:{ticks:{color:'#9aa4b2'}},y:{ticks:{color:'#9aa4b2'}}}
+  }
+});
+</script>
+</body>
+</html>
