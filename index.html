@@ -1,57 +1,156 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Dev Neupane — Portfolio</title>
-<meta name="description" content="Dev Neupane — Portfolio — Analytics portfolio by Dev Neupane"/>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dev Neupane — Analytics Portfolio</title>
+  <meta name="description" content="Devashish (Dev) Neupane — MBA. Data Analytics, Automation & BI. Financial Ops Automation, Predictive Analytics, and Cross-Functional ETL."/>
+  <meta name="keywords" content="Devashish Neupane, Dev Neupane, Data Analytics, Finance Automation, BI, dbt, Snowflake, Tableau, ETL, MBA"/>
+  <!-- Open Graph for rich previews -->
+  <meta property="og:title" content="Dev Neupane — Analytics Portfolio"/>
+  <meta property="og:description" content="Financial Automation • Predictive BI • Cross-Functional ETL"/>
+  <meta property="og:type" content="website"/>
 
-<style>
-  :root{--bg:#0b0e14;--card:#121826;--muted:#9aa4b2;--text:#e6eaf2;--accent:#7c5cff;--green:#00d97e;--red:#ff4d4f;}
-  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
-  .container{max-width:1080px;margin:0 auto;padding:28px}
-  .grid{display:grid;gap:18px}
-  .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:var(--card);border:1px solid #1f2740;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,.35)}
-  h1{font-size:32px;margin:4px 0 8px} h2{font-size:22px;margin:0 0 8px} h3{font-size:16px;margin:0 0 6px;color:var(--muted);font-weight:600}
-  p{line-height:1.6;color:#dfe3eb} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-  .pill{display:inline-flex;align-items:center;gap:8px;background:#161d31;border:1px solid #283356;color:#dfe3eb;border-radius:999px;padding:8px 12px;font-size:12px}
-  .kpi{display:flex;align-items:baseline;gap:8px} .kpi .value{font-size:28px;font-weight:800} .kpi .delta.up{color:var(--green)} .kpi .delta.down{color:var(--red)}
-  .row{display:flex;flex-wrap:wrap;gap:14px}
-  .btn{display:inline-block;background:linear-gradient(135deg,#7c5cff,#4a32ff);color:white;border:none;border-radius:12px;padding:10px 14px;font-weight:700}
-  .badge{background:#1a2138;border:1px solid #2b3869;border-radius:8px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center}
-  .hero{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-  .code, code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;color:#d1e9ff}
-  .footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
-  iframe{width:100%;height:420px;border:none;border-radius:12px;background:#0b0e14}
-  .list{margin:0;padding-left:18px}
-</style>
+  <!-- Animations & counters -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
 
-</head><body><div class="container">
-<div class="hero">
-  <span class="pill">Analytics Portfolio · Finance, BI & ETL</span>
-  <h1>Dev Neupane — Project Portfolio</h1>
-  <p>Three end‑to‑end projects demonstrating financial impact, production‑grade data pipelines, and executive BI. Each page includes metrics, artifacts, and code/visual links.</p>
-  <div class="row">
-    <a class="btn" href="project1_financial_automation.html">Project 1: Financial Ops Automation →</a>
-    <a class="btn" href="project2_predictive_bi.html">Project 2: Predictive Analytics & BI →</a>
-    <a class="btn" href="project3_etl_pipeline.html">Project 3: Cross‑Functional ETL →</a>
+  <style>
+    :root{
+      --bg:#0b0e14;--card:#121826;--muted:#9aa4b2;--text:#e6eaf2;--accent:#00d97e;--accent-2:#7c5cff;--border:#1f2740;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .nav{background:#111624;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+    .nav .row{max-width:1080px;margin:0 auto;display:flex;gap:22px;align-items:center;padding:12px 18px}
+    .nav a{color:#cbd3e1;font-weight:600} .nav a.active{color:var(--accent)}
+    .container{max-width:1080px;margin:0 auto;padding:28px}
+    .hero{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;margin:14px 0 24px}
+    .hero h1{font-size:36px;margin:6px 0;background:linear-gradient(135deg,var(--accent-2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{max-width:820px;color:#dfe3eb}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-block;background:linear-gradient(135deg,var(--accent-2),#4a32ff);color:#fff;border:none;border-radius:12px;padding:10px 14px;font-weight:700}
+    .btn.ghost{background:#162036;border:1px solid var(--border);color:#e6eaf2}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 6px 24px rgba(2,6,23,.35)}
+    .pill{display:inline-block;background:#161d31;border:1px solid #283356;border-radius:999px;padding:6px 10px;font-size:12px;color:#dfe3eb}
+    .kpis{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+    .kpi{background:#1a2138;border:1px solid #283356;border-radius:12px;padding:10px 14px;min-width:160px;text-align:center}
+    .kpi .v{font-size:26px;font-weight:800;display:block}
+    .project h3{margin:8px 0 6px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .footer{margin:30px 0 10px;color:var(--muted);font-size:12px;text-align:center}
+    /* Project card CTA */
+    .cta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .cta a{font-weight:700}
+  </style>
+</head>
+<body>
+  <!-- Top nav -->
+  <div class="nav">
+    <div class="row">
+      <a href="index.html" class="active">Home</a>
+      <a href="project1_financial_automation.html">Financial Automation</a>
+      <a href="project2_predictive_bi.html">Predictive BI System</a>
+      <a href="project3_etl_pipeline.html">ETL & Self-Service Analytics</a>
+    </div>
   </div>
-</div>
 
-<div class="grid grid-3">
-  
-    <div class="card">
-      <h3>Contribution Margin / Order</h3>
-      <div class="kpi"><div class="value">$↑</div><div class="delta up">▲ 2–5 pts</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Manual Hours Eliminated</h3>
-      <div class="kpi"><div class="value">20 hrs/wk</div><div class="delta up">▲ Saved</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Forecast Accuracy</h3>
-      <div class="kpi"><div class="value">22% ↑</div><div class="delta up">▲ vs baseline</div></div>
-    </div>
-</div>
+  <div class="container">
+    <!-- Hero -->
+    <section class="hero" data-aos="fade-up">
+      <span class="pill">MBA • Data Analytics • Automation & BI</span>
+      <h1>Devashish (Dev) Neupane</h1>
+      <p>I build data systems that improve decision quality and unit economics — from **financial operations automation** to **predictive analytics** and **self-service ETL pipelines**.</p>
+      <div class="btns">
+        <!-- Resume download: ensure the PDF exists in repo root -->
+        <a class="btn" href="DevashishNeupane_Resume.pdf" download>⬇️ Download Resume (PDF)</a>
+        <a class="btn ghost" href="mailto:devashish1000@gmail.com">Email</a>
+        <a class="btn ghost" href="https://linkedin.com/in/devashishn" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/devashish1000" target="_blank" rel="noopener">GitHub</a>
+      </div>
 
-<div class="footer">Last built 2025-10-21 06:17 • © Dev Neupane</div></div></body></html>
+      <!-- Quick impact KPIs -->
+      <div class="kpis">
+        <div class="kpi"><span class="v" id="k1">0</span>hrs/week saved (Automation)</div>
+        <div class="kpi"><span class="v" id="k2">0</span>% forecast accuracy lift</div>
+        <div class="kpi"><span class="v" id="k3">0</span>% fewer ad-hoc requests</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="grid grid-3" data-aos="fade-up">
+      <!-- Project 1 -->
+      <div class="card project">
+        <span class="pill">Python • SQL • Finance</span>
+        <h3>Financial Operations Automation Platform</h3>
+        <p>Automated reconciliations, variance analysis, and reporting — **20 hrs/week saved** and **2-day faster close** with **−38% exceptions**.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/Python-3.10-yellow?style=flat-square">
+          <img src="https://img.shields.io/badge/SQL-Postgres-blue?style=flat-square">
+          <img src="https://img.shields.io/badge/Tableau-Dashboard-orange?style=flat-square">
+        </div>
+        <div class="cta">
+          <a href="project1_financial_automation.html">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card project">
+        <span class="pill">Python • dbt • Snowflake</span>
+        <h3>Predictive Analytics & BI System</h3>
+        <p>Unified forecasting + executive BI — **25% accuracy lift** driving **$2M** strategic decisions across 15 BUs.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/dbt-Analytics-orange?style=flat-square">
+          <img src="https://img.shields.io/badge/Snowflake-Data%20Warehouse-blue?style=flat-square">
+          <img src="https://img.shields.io/badge/Tableau-BI-green?style=flat-square">
+        </div>
+        <div class="cta">
+          <a href="project2_predictive_bi.html">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card project">
+        <span class="pill">SQL • APIs • Zapier</span>
+        <h3>Cross-Functional ETL & Self-Service Analytics</h3>
+        <p>Production ETL unifying sales, CX, and supply data — **70% fewer ad-hoc requests** and **78% lower latency**.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/API-Integration-yellow?style=flat-square">
+          <img src="https://img.shields.io/badge/Zapier-Automation-orange?style=flat-square">
+          <img src="https://img.shields.io/badge/Airflow-Orchestration-lightgrey?style=flat-square">
+        </div>
+        <div class="cta">
+          <a href="project3_etl_pipeline.html">View Project →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="card" style="margin-top:18px" data-aos="fade-up">
+      <h3 style="margin:0 0 8px">Core Stack</h3>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Python-Pandas%20%7C%20NumPy-yellow?style=flat-square">
+        <img src="https://img.shields.io/badge/SQL-Postgres%20%7C%20Snowflake-blue?style=flat-square">
+        <img src="https://img.shields.io/badge/dbt-Modeling-orange?style=flat-square">
+        <img src="https://img.shields.io/badge/Tableau%20%7C%20BI-Dashboards-green?style=flat-square">
+        <img src="https://img.shields.io/badge/Automation-Airflow%20%7C%20Zapier-lightgrey?style=flat-square">
+        <img src="https://img.shields.io/badge/Excel-VBA%20%7C%20Macros-4caf50?style=flat-square">
+        <img src="https://img.shields.io/badge/R-Analytics-9cf?style=flat-square">
+      </div>
+    </section>
+
+    <div class="footer">© Dev Neupane — Analytics Portfolio</div>
+  </div>
+
+  <script>
+    AOS.init({duration:800});
+    new CountUp('k1',0,20,0,2.0).start();
+    new CountUp('k2',0,25,0,2.0).start();
+    new CountUp('k3',0,70,0,2.0).start();
+  </script>
+</body>
+</html>
