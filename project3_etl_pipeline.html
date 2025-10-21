@@ -1,66 +1,70 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Cross‑Functional ETL Pipeline — Dev Neupane</title>
-<meta name="description" content="Cross‑Functional ETL Pipeline — Dev Neupane — Analytics portfolio by Dev Neupane"/>
-
-<style>
-  :root{--bg:#0b0e14;--card:#121826;--muted:#9aa4b2;--text:#e6eaf2;--accent:#7c5cff;--green:#00d97e;--red:#ff4d4f;}
-  *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);}
-  .container{max-width:1080px;margin:0 auto;padding:28px}
-  .grid{display:grid;gap:18px}
-  .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-  .card{background:var(--card);border:1px solid #1f2740;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,.35)}
-  h1{font-size:32px;margin:4px 0 8px} h2{font-size:22px;margin:0 0 8px} h3{font-size:16px;margin:0 0 6px;color:var(--muted);font-weight:600}
-  p{line-height:1.6;color:#dfe3eb} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-  .pill{display:inline-flex;align-items:center;gap:8px;background:#161d31;border:1px solid #283356;color:#dfe3eb;border-radius:999px;padding:8px 12px;font-size:12px}
-  .kpi{display:flex;align-items:baseline;gap:8px} .kpi .value{font-size:28px;font-weight:800} .kpi .delta.up{color:var(--green)} .kpi .delta.down{color:var(--red)}
-  .row{display:flex;flex-wrap:wrap;gap:14px}
-  .btn{display:inline-block;background:linear-gradient(135deg,#7c5cff,#4a32ff);color:white;border:none;border-radius:12px;padding:10px 14px;font-weight:700}
-  .badge{background:#1a2138;border:1px solid #2b3869;border-radius:8px;padding:8px 12px;display:inline-flex;gap:8px;align-items:center}
-  .hero{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-  .code, code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;color:#d1e9ff}
-  .footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
-  iframe{width:100%;height:420px;border:none;border-radius:12px;background:#0b0e14}
-  .list{margin:0;padding-left:18px}
-</style>
-
-</head><body><div class="container">
-<div class="hero">
-  <span class="pill">Project · Data Engineering · Ops</span>
-  <h1>Cross‑Functional ETL Pipeline</h1>
-  <p>Productionized a cross‑functional ETL that consolidated sales, CX, and supply data; delivered SLA‑reliable datasets for finance and exec BI.</p>
-  <div class="row">
-    <a class="badge" href="https://github.com/yourusername/cross-functional-etl" target="_blank">💻 View Code on GitHub</a>
-    <a class="badge" href="https://drive.google.com/" target="_blank">📄 Data Contracts & Lineage</a>
-    <a class="badge" href="https://www.notion.so/" target="_blank">🧭 Runbook (Notion)</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Cross-Functional ETL Pipeline & Self-Service Analytics — Dev Neupane</title>
+  <meta name="description" content="Production-grade ETL and self-service analytics stack — reduced ad-hoc reporting by 70%.">
+  <style>
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0b0e14;color:#e6eaf2}
+    .container{max-width:1080px;margin:0 auto;padding:28px}
+    .hero{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+    .pill{display:inline-block;background:#161d31;border:1px solid #283356;color:#dfe3eb;border-radius:999px;padding:8px 12px;font-size:12px}
+    h1{font-size:32px;margin:6px 0 8px}
+    h2{font-size:22px;margin-top:24px}
+    p{line-height:1.6;color:#dfe3eb}
+    a{color:#7c5cff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .card{background:#121826;border:1px solid #1f2740;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(2,6,23,.35);margin-top:16px}
+    iframe{width:100%;height:480px;border:none;border-radius:12px;background:#0b0e14;margin-top:10px}
+    .related{background:#161d31;border:1px solid #283356;border-radius:14px;padding:18px;margin-top:24px}
+    .related h3{color:#9aa4b2;font-size:14px;margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
+    .related p{margin:6px 0;font-size:15px}
+    .related a{color:#00d97e;font-weight:600;text-decoration:none}
+    .related a:hover{text-decoration:underline}
+    .kpi{display:flex;gap:18px;margin-top:12px;flex-wrap:wrap}
+    .metric{background:#1a2138;padding:12px 18px;border-radius:10px;display:flex;flex-direction:column;align-items:flex-start}
+    .metric span{font-size:28px;font-weight:800}
+    .footer{text-align:center;font-size:12px;color:#9aa4b2;margin-top:30px}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <span class="pill">Project · SQL · APIs · Zapier</span>
+    <h1>Cross-Functional ETL Pipeline & Self-Service Analytics</h1>
+    <p>Engineered a unified ETL framework connecting sales, CX, and supply chain data, automating data refresh and enabling real-time self-service analytics — reducing ad-hoc reporting requests by 70%.</p>
   </div>
-</div>
 
-<div class="grid grid-3">
-  
-    <div class="card">
-      <h3>Pipeline Uptime</h3>
-      <div class="kpi"><div class="value">99.6%</div><div class="delta up">▲ 30‑day</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Data Latency</h3>
-      <div class="kpi"><div class="value">↓ 78%</div><div class="delta up">▲ to BI refresh</div></div>
-    </div>
-  
-    <div class="card">
-      <h3>Quality Incidents</h3>
-      <div class="kpi"><div class="value">−65%</div><div class="delta up">▲ month over month</div></div>
-    </div>
-</div>
+  <div class="kpi">
+    <div class="metric"><span>99.6%</span> Pipeline Uptime</div>
+    <div class="metric"><span>↓78%</span> Data Latency</div>
+    <div class="metric"><span>−70%</span> Ad-Hoc Requests</div>
+  </div>
 
-<div class="card">
-  <h2>Architecture</h2>
-  <ul class="list">
-    <li>Source extractors (REST/SQL), CDC for transactional systems, and partitioned parquet lake.</li>
-    <li>Transformations with dbt‑style modular SQL + Python validation (great_expectations‑like checks).</li>
-    <li>Orchestration on cron/airflow‑ready schedule with alerting and retry/backoff.</li>
-  </ul>
-</div>
+  <div class="card">
+    <h2>Pipeline Overview (Dynamic Visualization)</h2>
+    <p>This embedded visualization illustrates the automated data flow — from ingestion via APIs and SQL extraction, to transformation using dbt-style modular SQL, and final delivery into analytics dashboards.</p>
+    <iframe src="https://lookerstudio.google.com/embed/reporting/18e6a2b5-cd3b-4c29-98a1-c07cb39ff2d3/page/p_45nv8c7s5d" allowfullscreen></iframe>
+  </div>
 
-<div class="footer">Last built 2025-10-21 06:17 • © Dev Neupane</div></div></body></html>
+  <div class="card">
+    <h2>Key Architecture Components</h2>
+    <ul>
+      <li>Source Extractors — REST APIs, SQL databases, and flat-file ingestion to a centralized data lake.</li>
+      <li>Transformations — dbt-like modular SQL and Python validations (using Great Expectations framework).</li>
+      <li>Automation — Scheduled pipelines via Zapier webhooks and Airflow-compatible orchestration.</li>
+      <li>Delivery — Automated table refreshes feeding executive BI dashboards and finance forecasting models.</li>
+    </ul>
+  </div>
+
+  <div class="related">
+    <h3>Explore More</h3>
+    <p><a href="project1_financial_automation.html">PROJECT 1:</a> Financial Operations Automation Platform — Python + SQL Automation, 20 Hours Saved Weekly.</p>
+    <p><a href="project2_predictive_bi.html">PROJECT 2:</a> Predictive Analytics & BI System (Python + dbt + Snowflake) — $2M Initiative, 25% Accuracy Lift.</p>
+  </div>
+
+  <div class="footer">© Dev Neupane — Live Portfolio</div>
+</div>
+</body>
+</html>
